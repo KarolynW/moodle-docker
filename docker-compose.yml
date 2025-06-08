@@ -1,0 +1,38 @@
+services:
+  moodle:
+    image: bitnami/moodle:latest
+    container_name: kara-moodle
+    ports:
+      - "8080:8080"
+    environment:
+      - MOODLE_USERNAME=kara
+      - MOODLE_PASSWORD=karatest123
+      - MOODLE_EMAIL=kara@example.com
+      - MOODLE_SITE_NAME=Kara’s Test Moodle
+      - MARIADB_HOST=mariadb
+      - MOODLE_DATABASE_USER=bn_moodle
+      - MOODLE_DATABASE_PASSWORD=moodlepass
+      - MOODLE_DATABASE_NAME=bitnami_moodle
+    volumes:
+      - moodle_data:/bitnami/moodle
+      - moodledata_data:/bitnami/moodledata
+      - ./themes/moove:/bitnami/moodle/theme/moove
+    depends_on:
+      - mariadb
+
+  mariadb:
+    image: bitnami/mariadb:latest
+    container_name: kara-mariadb
+    environment:
+      - MARIADB_ROOT_PASSWORD=rootpass
+      - MARIADB_USER=bn_moodle
+      - MARIADB_PASSWORD=moodlepass
+      - MARIADB_DATABASE=bitnami_moodle
+    volumes:
+      - mariadb_data:/bitnami/mariadb
+
+volumes:
+  moodle_data:
+  moodledata_data:
+  mariadb_data:
+
