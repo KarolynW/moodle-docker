@@ -1,0 +1,52 @@
+# Ignore Docker volumes and system files
+*.log
+*.pid
+*.lock
+
+# Ignore IDE/editor junk
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+.DS_Store
+Thumbs.db
+
+# Ignore environment config
+.env
+.env.*
+
+# Ignore Moodle-generated content
+moodledata/
+moodle_data/
+moodledata_data/
+moodle_data_data/
+bitnami/
+
+# Ignore composer and vendor dependencies if not checked in
+/vendor/
+/node_modules/
+
+# Ignore PHPUnit/Behat test output
+phpunit.xml
+phpunit.xml.*
+behat.yml
+behat.yml.*
+
+# Ignore test reports
+/junit/
+/coverage/
+/build/
+
+# Ignore backups or temp files
+*.zip
+*.tar.gz
+*.sql
+*.tmp
+
+# OS-specific
+ehthumbs.db
+desktop.ini
+
+# Ignore GitHub Actions logs
+.github/workflows/*.log
