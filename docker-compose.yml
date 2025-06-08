@@ -17,6 +17,8 @@ services:
       - moodle_data:/bitnami/moodle
       - moodledata_data:/bitnami/moodledata
       - ./themes/moove:/bitnami/moodle/theme/moove
+      - ./plugins/local_helloworld:/bitnami/moodle/local/helloworld
+      - ./behatdata:/bitnami/moodledata_behat
     depends_on:
       - mariadb
 
