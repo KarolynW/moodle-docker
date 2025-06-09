@@ -16,14 +16,13 @@ This repository contains a self-contained Moodle development environment powered
 moodle-docker/
 ├── docker-compose.yml        # Docker config for Moodle + MariaDB
 ├── README.md                 # You're here
-├── .env.example              # Example environment file
 ├── themes/                   # Custom Moodle themes (e.g., Moove)
 │   └── moove/
 ├── local/                    # Moodle local plugins under development
 │   └── yourplugin/
 ├── .github/
 │   └── workflows/
-│       └── moodle-ci.yml     # GitHub Actions CI setup for PHPUnit
+│       └── moodle-test.yml   # GitHub Actions CI setup for PHPUnit
 └── .vscode/                  # Optional: Dev container or workspace config
 ```
 
@@ -61,7 +60,7 @@ vendor/bin/behat
 
 ## 🌐 GitHub CI Integration
 
-The repo includes a GitHub Actions workflow (`.github/workflows/moodle-ci.yml`) to automate:
+The repo includes a GitHub Actions workflow (`.github/workflows/moodle-test.yml`) to automate:
 
 - Composer dependency installation
 - PHPUnit test execution
